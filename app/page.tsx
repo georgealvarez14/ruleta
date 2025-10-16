@@ -463,15 +463,15 @@ export default function VerbRoulettePage() {
         {/* Big Word when it appears */}
         {selectedVerb && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="text-center">
-              <div className="text-9xl md:text-[12rem] font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 animate-in fade-in-50 slide-in-from-bottom-4 drop-shadow-2xl">
+            <div className="text-center max-w-4xl w-full">
+              <div className="text-6xl sm:text-8xl lg:text-9xl xl:text-[10rem] font-black bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 sm:mb-6 animate-in fade-in-50 slide-in-from-bottom-4 drop-shadow-2xl">
                 {selectedVerb.verb.toUpperCase()}
               </div>
               
               <Badge 
                 variant={selectedVerb.type === "regular" ? "secondary" : "default"}
                 className={cn(
-                  "text-2xl px-6 py-3 mb-6",
+                  "text-lg sm:text-xl lg:text-2xl px-4 py-2 sm:px-6 sm:py-3 mb-4 sm:mb-6",
                   selectedVerb.type === "regular" ? "bg-cyan-500 text-white" : "bg-purple-500 text-white"
                 )}
               >
@@ -479,13 +479,13 @@ export default function VerbRoulettePage() {
               </Badge>
 
               {/* Pronunciation feedback section */}
-              <div className="mb-8 p-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl border-4 border-blue-300 shadow-2xl">
-                <div className="text-2xl font-bold text-blue-800 mb-4">How did you pronounce it?</div>
-                <div className="text-3xl font-bold text-blue-600 mb-6">
+              <div className="mb-6 sm:mb-8 p-4 sm:p-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl border-4 border-blue-300 shadow-2xl">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800 mb-3 sm:mb-4">How did you pronounce it?</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mb-4 sm:mb-6">
                   "{selectedVerb.verb}"
                 </div>
                 
-                <div className="flex items-center justify-center gap-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8">
                   <button
                     onClick={() => {
                       // Happy feedback
@@ -495,10 +495,10 @@ export default function VerbRoulettePage() {
                       }
                       setSelectedVerb(null)
                     }}
-                    className="p-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                    className="p-4 sm:p-6 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 min-w-[120px] sm:min-w-[140px]"
                   >
-                    <div className="text-8xl">😊</div>
-                    <div className="text-lg font-bold mt-3">Good!</div>
+                    <div className="text-6xl sm:text-8xl">😊</div>
+                    <div className="text-sm sm:text-base lg:text-lg font-bold mt-2 sm:mt-3">Good!</div>
                   </button>
                   
                   <button
@@ -510,10 +510,10 @@ export default function VerbRoulettePage() {
                       }
                       setSelectedVerb(null)
                     }}
-                    className="p-6 rounded-full bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                    className="p-4 sm:p-6 rounded-full bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 min-w-[120px] sm:min-w-[140px]"
                   >
-                    <div className="text-8xl">😢</div>
-                    <div className="text-lg font-bold mt-3">Bad</div>
+                    <div className="text-6xl sm:text-8xl">😢</div>
+                    <div className="text-sm sm:text-base lg:text-lg font-bold mt-2 sm:mt-3">Try again</div>
                   </button>
                 </div>
               </div>

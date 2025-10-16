@@ -285,29 +285,29 @@ export function VerbRoulette({ verbs, isSpinning, selectedVerb, onSpinClick }: V
 
       {/* Feedback faces after pronunciation */}
       {selectedVerb && !isSpinning && !showFeedback && (
-        <div className="absolute inset-0 pointer-events-auto flex items-center justify-center z-50">
-          <div className="p-8 rounded-2xl text-center font-bold text-lg bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-4 border-blue-300 shadow-2xl">
-            <div className="space-y-4">
-              <div className="text-2xl mb-4">How did you pronounce it?</div>
-              <div className="text-3xl font-bold text-blue-600 mb-6">
+        <div className="absolute inset-0 pointer-events-auto flex items-center justify-center z-50 p-4">
+          <div className="p-4 sm:p-6 lg:p-8 rounded-2xl text-center font-bold text-lg bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-4 border-blue-300 shadow-2xl max-w-md sm:max-w-lg w-full">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="text-lg sm:text-xl lg:text-2xl mb-3 sm:mb-4">How did you pronounce it?</div>
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mb-4 sm:mb-6">
                 "{selectedVerb.verb}"
               </div>
               
-              <div className="flex items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                 <button
                   onClick={() => handlePronunciationFeedback(true)}
-                  className="p-4 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                  className="p-3 sm:p-4 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 min-w-[100px] sm:min-w-[120px]"
                 >
-                  <div className="text-6xl">😊</div>
-                  <div className="text-sm font-bold mt-2">Good!</div>
+                  <div className="text-5xl sm:text-6xl">😊</div>
+                  <div className="text-xs sm:text-sm font-bold mt-1 sm:mt-2">Good!</div>
                 </button>
                 
                 <button
                   onClick={() => handlePronunciationFeedback(false)}
-                  className="p-4 rounded-full bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                  className="p-3 sm:p-4 rounded-full bg-gradient-to-r from-red-400 to-pink-500 hover:from-red-500 hover:to-pink-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 min-w-[100px] sm:min-w-[120px]"
                 >
-                  <div className="text-6xl">😢</div>
-                  <div className="text-sm font-bold mt-2">Bad</div>
+                  <div className="text-5xl sm:text-6xl">😢</div>
+                  <div className="text-xs sm:text-sm font-bold mt-1 sm:mt-2">Try again</div>
                 </button>
               </div>
             </div>
